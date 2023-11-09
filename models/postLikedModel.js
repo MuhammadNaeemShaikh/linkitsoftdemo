@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postLiked = mongoose.Schema(
+const postLikedSchema = mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -17,5 +17,7 @@ const postLiked = mongoose.Schema(
     timeStamps: true,
   }
 );
+
+const postLiked = mongoose.model('LikedPost',postLikedSchema)
 
 module.exports = postLiked;
